@@ -1,0 +1,7 @@
+#!/bin/bash
+
+set -euxo pipefail
+
+export RUNNER_ALLOW_RUNASROOT=true
+./config.sh --url ${REPOSITORY} --token ${TOKEN} --name default --work _work
+./run.sh
