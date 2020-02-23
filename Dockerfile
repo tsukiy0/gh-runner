@@ -1,5 +1,6 @@
 FROM debian
 
+# docker
 RUN apt-get update && apt-get install -y \
     apt-transport-https \
     ca-certificates \
@@ -17,8 +18,15 @@ RUN apt-get update && apt-get install -y \
     docker-ce-cli \
     containerd.io
 
-WORKDIR /runner
+# docker-compose
+RUN curl -L "https://github.com/docker/compose/releases/download/1.25.4/docker-compose-$(uname -s)-$(uname -m)" > /usr/local/bin/docker-compose
+RUN chmod +x /usr/local/bin/docker-compose
 
+# runner
+WORKDIR /runner
 RUN curl -L https://github.com/actions/runner/releases/download/v2.165.2/actions-runner-linux-x64-2.165.2.tar.gz > runner.tar.gz
 RUN tar xzf runner.tar.gz
 RUN rm -f runner.tar.gz
+
+COPY ./bin/start ./start
+CMD ["./start"]
