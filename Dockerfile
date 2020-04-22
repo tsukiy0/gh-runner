@@ -1,5 +1,7 @@
 FROM debian
 
+ARG GH_RUNNER_VERSION="2.169.1"
+
 # docker
 RUN apt-get update && apt-get install -y \
     apt-transport-https \
@@ -22,9 +24,9 @@ RUN apt-get update && apt-get install -y \
 RUN curl -L "https://github.com/docker/compose/releases/download/1.25.4/docker-compose-$(uname -s)-$(uname -m)" > /usr/local/bin/docker-compose
 RUN chmod +x /usr/local/bin/docker-compose
 
-# runner
+# gh-runner
 WORKDIR /runner
-RUN curl -L https://github.com/actions/runner/releases/download/v2.165.2/actions-runner-linux-x64-2.165.2.tar.gz > runner.tar.gz
+RUN curl -L https://github.com/actions/runner/releases/download/v${GH_RUNNER_VERSION}}/actions-runner-linux-x64-${GH_RUNNER_VERSION}}.tar.gz > runner.tar.gz
 RUN tar xzf runner.tar.gz
 RUN rm -f runner.tar.gz
 
