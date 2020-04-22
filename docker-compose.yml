@@ -6,7 +6,9 @@ services:
       dockerfile: Dockerfile
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
+      - /tmp/repository:/tmp/repository
     environment:
       REPOSITORY: $$$
       TOKEN: $$$
+      WORKDIR: /tmp/repository
     

@@ -3,5 +3,5 @@
 set -euxo pipefail
 
 export RUNNER_ALLOW_RUNASROOT=true
-./config.sh --url ${REPOSITORY} --token ${TOKEN} --name default --work _work
+./config.sh --url ${REPOSITORY} --token ${TOKEN} --name default --work ${WORK_DIR}
 ./run.sh
