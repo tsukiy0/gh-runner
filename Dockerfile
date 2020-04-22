@@ -26,7 +26,7 @@ RUN chmod +x /usr/local/bin/docker-compose
 
 # gh-runner
 WORKDIR /runner
-RUN curl -L https://github.com/actions/runner/releases/download/v${GH_RUNNER_VERSION}}/actions-runner-linux-x64-${GH_RUNNER_VERSION}}.tar.gz > runner.tar.gz
+RUN curl -L https://github.com/actions/runner/releases/download/v${GH_RUNNER_VERSION}/actions-runner-linux-x64-${GH_RUNNER_VERSION}.tar.gz > runner.tar.gz
 RUN tar xzf runner.tar.gz
 RUN rm -f runner.tar.gz
 

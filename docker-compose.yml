@@ -8,8 +8,8 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock
       - /tmp/repository:/tmp/repository
     environment:
-      USER: $$$
-      REPO: $$$
-      TOKEN: $$$
+      USER: user
+      REPO: repo
+      TOKEN: token
       WORKDIR: /tmp/repository
     
