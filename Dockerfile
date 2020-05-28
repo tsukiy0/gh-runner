@@ -1,6 +1,6 @@
 FROM debian
 
-ARG GH_RUNNER_VERSION="2.262.1"
+ARG GH_RUNNER_VERSION="2.263.0"
 
 # docker
 RUN apt-get update && apt-get install -y \
